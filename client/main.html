@@ -1,0 +1,41 @@
+<head>
+    <title>Lego Example</title>
+</head>
+
+<body>
+{{> legoScene}}
+</body>
+
+<template name="legoScene">
+    <div>{{lengthBoxes}} Boxes</div>
+    <x3d class="build active">
+        <scene>
+            <viewpoint position="8.19 12.33 19.5"
+                       orientation="-0.834 0.55 0 0.65"
+                       centerOfRotation="0 0 0"></viewpoint>
+
+            <transform rotation="-1.5707963267948966 0 0 1.5707963267948966">
+                <shape>
+                    <appearance>
+                        <material diffuseColor="#3883a0"></material>
+                    </appearance>
+                    <plane size="20 20"></plane>
+                </shape>
+            </transform>
+
+            <background skyColor="(255,255,255)"></background>
+
+            {{#each boxes}}
+            <transform translation="{{x}} {{y}} {{z}}" scale="0.5 0.5 0.5">
+                <shape id="{{_id}}">
+                    <appearance>
+                        <material diffuseColor="#ffffff" ambientIntensity="0.1"
+                                  shininess="0"></material>
+                    </appearance>
+                    <box></box>
+                </shape>
+            </transform>
+            {{/each}}
+        </scene>
+    </x3d>
+</template>

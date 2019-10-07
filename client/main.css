@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+div {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 18px;
+  z-index: 10;
+}
+
+x3d {
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+}
